@@ -34,11 +34,12 @@ app.config(function($routeProvider){
 .run(function($rootScope, $location, EnvironmentService){
   $rootScope.$on("$routeChangeStart", function(event, next, current){
 	    var name = EnvironmentService.getUsername();
-	    if(name) {
-	    	$rootScope.username = name;
-	    }
-	    else {
-	    	$location.path("/login");
-	    }
+	    $rootScope.username = name;
+	    // if(name) {
+	    // 	$rootScope.username = name;
+	    // }
+	    // else {
+	    // 	$location.path("/login");
+	    // }
   })
 })
